@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    private static String userName;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String actionType;
@@ -25,13 +25,12 @@ public class App {
 
                 case "1":
                     System.out.println("Welcome to the Brain Games!");
-                    userName = Cli.greetings();
+                    Cli.greetings();
                     break;
 
                 case "2":
                     System.out.println("Welcome to the Brain Games!");
-                    userName = Cli.greetings();
-                    Even.play(userName);
+                    Even.play();
                     break;
 
                 default:

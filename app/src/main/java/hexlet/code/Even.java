@@ -3,10 +3,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
-    public static void play(String userName) {
+    private static String userName;
+    public static void play() {
         int cntTrial = 0;
         Random rand = new Random();
-        Scanner inputEven = new Scanner(System.in);
+
+        Scanner inputScan = new Scanner(System.in);
+        System.out.println("May I have your name?");
+
+        userName = inputScan.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
         for (cntTrial = 0; cntTrial < 3; cntTrial++) {
@@ -15,32 +21,15 @@ public class Even {
 
             System.out.println("Question: " + newVal);
 
-            String answerUser = inputEven.nextLine();
+            String answerUser = inputScan.nextLine();
             String answerCorrect = (0 == (newVal % 2)) ? "yes" : "no";
 
-            switch (answerUser) {
-                case "yes":
-                    if (0 == (newVal % 2)) {
-                        isCorrect = true;
-                    }
-                    break;
-
-                case "no":
-                    if (0 != (newVal % 2)) {
-                        isCorrect = true;
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-
-            if (!isCorrect) {
+            if (answerUser.equals(answerCorrect)) {
+                System.out.println("Correct!");
+            } else {
                 System.out.println("'" + answerUser + "' is wrong answer ;(. Correct answer was '"
                         + answerCorrect + "'.");
                 break;
-            } else {
-                System.out.println("Correct!");
             }
         }
 
