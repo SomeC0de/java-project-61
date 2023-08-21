@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
-
 import java.util.Scanner;
 
 public class App {
@@ -13,7 +11,11 @@ public class App {
         while (true) {
 
             System.out.println("Please enter the game number and press Enter.");
-            System.out.println("1 - Greet\n" + "2 - Even\n" + "0 - Exit");
+            System.out.println(
+                    "1 - Greet\n"
+                    + "2 - Even\n"
+                    + "3 - Calculator\n"
+                    + "0 - Exit");
 
             boolean isExit = false;
             actionType = scanner.nextLine();
@@ -26,13 +28,12 @@ public class App {
                     break;
 
                 case "1":
-                    System.out.println("Welcome to the Brain Games!");
                     Cli.greetings();
                     break;
 
                 case "2":
-                    System.out.println("Welcome to the Brain Games!");
-                    Even.play();
+                    Engine newGame = new Engine();
+                    newGame.runEngine(Integer.parseInt(actionType));
                     break;
 
                 default:
