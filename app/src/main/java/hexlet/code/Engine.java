@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.Even;
-import hexlet.code.games.GameInterface;
 
 public class Engine {
     private static final int TRIAL_MAX_CNT = 3;

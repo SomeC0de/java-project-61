@@ -1,4 +1,9 @@
 package hexlet.code.games;
 
-public class Calc {
+import hexlet.code.GameInterface;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Calc implements GameInterface {
 }
