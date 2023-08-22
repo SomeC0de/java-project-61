@@ -33,7 +33,7 @@ public class App {
 
                 case "2":
                     Engine newGame = new Engine();
-                    newGame.runEngine(Integer.parseInt(actionType));
+                    newGame.runEngine(Engine.ID_GAME_EVEN);
                     break;
 
                 default:

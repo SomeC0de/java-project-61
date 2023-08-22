@@ -1,27 +1,26 @@
 package hexlet.code;
+
 import hexlet.code.games.Even;
 import hexlet.code.games.GameInterface;
 
-import java.util.Scanner;
-
 public class Engine {
-    final int trialsCountMax = 3;
-    final int idGameEven = 2;
-    final int idGameCalc = 3;
-    Scanner inputScan;
+    private static final int TRIAL_MAX_CNT = 3;
+    public static final int ID_GAME_EVEN = 2;
+    public static final int ID_GAME_CALC = 3;
     Even gameEven = new Even();
     GameInterface[] arrayGamesMethods = {null, null, gameEven};
 
     public void runEngine(int idGame) {
-        int trialNum = 0;
+        int trialNum;
+
         switch (idGame) {
-            case idGameEven:
-            case idGameCalc:
+            case ID_GAME_EVEN:
+            case ID_GAME_CALC:
                 arrayGamesMethods[idGame].initGame();
                 arrayGamesMethods[idGame].sayHello();
                 arrayGamesMethods[idGame].explainRules();
 
-                for (trialNum = 0; trialNum < trialsCountMax; trialNum++) {
+                for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
                     arrayGamesMethods[idGame].generateQuestion();
                     arrayGamesMethods[idGame].getAnswer();
 
@@ -30,7 +29,7 @@ public class Engine {
                     }
                 }
 
-                arrayGamesMethods[idGame].sayGoodbye(trialNum, trialsCountMax);
+                arrayGamesMethods[idGame].sayGoodbye(trialNum, TRIAL_MAX_CNT);
                 break;
 
             default:
