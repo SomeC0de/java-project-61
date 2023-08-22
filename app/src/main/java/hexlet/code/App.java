@@ -32,8 +32,13 @@ public class App {
                     break;
 
                 case "2":
-                    Engine newGame = new Engine();
-                    newGame.runEngine(Engine.ID_GAME_EVEN);
+                    Engine newGameEven = new Engine();
+                    newGameEven.runEngine(Engine.ID_GAME_EVEN);
+                    break;
+
+                case "3":
+                    Engine newGameCalc = new Engine();
+                    newGameCalc.runEngine(Engine.ID_GAME_CALC);
                     break;
 
                 default:
