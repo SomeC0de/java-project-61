@@ -1,17 +1,18 @@
 package hexlet.code.games;
 import hexlet.code.GameInterface;
+import hexlet.code.RandomGenerator;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Even implements GameInterface {
     private static String userName;
-    Random rand;
     Scanner inputScan;
     int newVal;
+    private final static int LOW_LIMIT = -10;
+    private final static int HIGH_LIMIT = 10;
     String answerUser;
     public void initGame() {
-        rand = new Random();
         inputScan = new Scanner(System.in);
     }
     public void sayHello() {
@@ -25,7 +26,7 @@ public class Even implements GameInterface {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
     }
     public void generateQuestion() {
-        newVal = rand.nextInt();
+        newVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         System.out.println("Question: " + newVal);
     }
     public void getAnswer() {

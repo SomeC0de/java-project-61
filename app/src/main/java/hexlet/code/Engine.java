@@ -2,12 +2,15 @@ package hexlet.code;
 
 import hexlet.code.games.Even;
 
+import hexlet.code.games.Calc;
+
 public class Engine {
     private static final int TRIAL_MAX_CNT = 3;
     public static final int ID_GAME_EVEN = 2;
     public static final int ID_GAME_CALC = 3;
     Even gameEven = new Even();
-    GameInterface[] arrayGamesMethods = {null, null, gameEven};
+    Calc gameCalc = new Calc();
+    GameInterface[] arrayGamesMethods = {null, null, gameEven, gameCalc};
 
     public void runEngine(int idGame) {
         int trialNum;
