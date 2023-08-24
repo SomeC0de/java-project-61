@@ -3,17 +3,16 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Calc implements GameInterface {
     private static String userName;
     Scanner inputScan;
-    private final static int LOW_LIMIT = -10;
-    private final static int HIGH_LIMIT = 10;
-    private final static int MULTIPLY = 0;
-    private final static int ADD = 1;
-    private final static int SUBTRACT = 2;
+    private static final int LOW_LIMIT = -10;
+    private static final int HIGH_LIMIT = 10;
+    private static final int MULTIPLY = 0;
+    private static final int ADD = 1;
+    private static final int SUBTRACT = 2;
     private static int result;
     int answerUser;
     public void initGame() {
@@ -59,7 +58,7 @@ public class Calc implements GameInterface {
     }
 
     private static int calculateResult(int first, int second, int action) {
-        int result = 0;
+        int calcValue = 0;
 
         switch (action) {
             case MULTIPLY:
@@ -75,16 +74,16 @@ public class Calc implements GameInterface {
                 new RuntimeException("unknown action: " + action);
                 break;
         }
-        return result;
+        return calcValue;
     }
 
-    private static void generateAndShow () {
+    private static void generateAndShow() {
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         String actionWord = null;
 
-        result = calculateResult (firstValue, secondValue, actionId);
+        result = calculateResult(firstValue, secondValue, actionId);
 
         switch (actionId) {
             case MULTIPLY:

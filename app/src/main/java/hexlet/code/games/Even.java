@@ -2,15 +2,14 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Even implements GameInterface {
     private static String userName;
     Scanner inputScan;
     int newVal;
-    private final static int LOW_LIMIT = -10;
-    private final static int HIGH_LIMIT = 10;
+    private static final int LOW_LIMIT = -10;
+    private static final int HIGH_LIMIT = 10;
     String answerUser;
     public void initGame() {
         inputScan = new Scanner(System.in);
