@@ -38,8 +38,14 @@ public class Calc implements GameInterface {
     public boolean isAnswerCorrect() {
         boolean isCorrect = false;
 
+        System.out.println("Your answer: " + answerUser);
+        // TBD: print message for both cases true or false
         if (answerUser == result) {
+            System.out.println("Correct!");
             isCorrect = true;
+        } else {
+            System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
+                    + "'" + result + "'");
         }
 
         return isCorrect;
