@@ -4,3 +4,4 @@
 ## Game demonstration
 Asciinema demonstrates general features of the game (Even): https://asciinema.org/a/8e9d07cDMoPXZS13ptlKCGVgN
 Asciinema demonstrates general features of the game (Calculator): https://asciinema.org/a/kqwes0u7B2iZhbaqU7RD9ELE4
+Asciinema demonstrates general features of the game (GCD): https://asciinema.org/a/bFSuH5np6si4dPW95rFPAtuoC
