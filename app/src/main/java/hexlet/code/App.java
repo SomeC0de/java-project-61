@@ -15,6 +15,7 @@ public class App {
                     "1 - Greet\n"
                     + "2 - Even\n"
                     + "3 - Calculator\n"
+                    + "4 - GCD\n"
                     + "0 - Exit");
 
             boolean isExit = false;
@@ -39,6 +40,11 @@ public class App {
                 case "3":
                     Engine newGameCalc = new Engine();
                     newGameCalc.runEngine(Engine.ID_GAME_CALC);
+                    break;
+
+                case "4":
+                    Engine newGameGcd = new Engine();
+                    newGameGcd.runEngine(Engine.ID_GAME_GCD);
                     break;
 
                 default:

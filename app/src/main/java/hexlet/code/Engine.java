@@ -4,13 +4,16 @@ import hexlet.code.games.Even;
 
 import hexlet.code.games.Calc;
 
+import hexlet.code.games.Gcd;
 public class Engine {
     private static final int TRIAL_MAX_CNT = 3;
     public static final int ID_GAME_EVEN = 2;
     public static final int ID_GAME_CALC = 3;
+    public static final int ID_GAME_GCD = 4;
     Even gameEven = new Even();
     Calc gameCalc = new Calc();
-    GameInterface[] arrayGamesMethods = {null, null, gameEven, gameCalc};
+    Gcd gameGcd = new Gcd();
+    GameInterface[] arrayGamesMethods = {null, null, gameEven, gameCalc, gameGcd};
 
     public void runEngine(int idGame) {
         int trialNum;
@@ -18,6 +21,7 @@ public class Engine {
         switch (idGame) {
             case ID_GAME_EVEN:
             case ID_GAME_CALC:
+            case ID_GAME_GCD:
                 arrayGamesMethods[idGame].initGame();
                 arrayGamesMethods[idGame].sayHello();
                 arrayGamesMethods[idGame].explainRules();
