@@ -38,7 +38,7 @@ public class Calc implements GameInterface {
         boolean isCorrect = false;
 
         System.out.println("Your answer: " + answerUser);
-        // TBD: print message for both cases true or false
+
         if (answerUser == result) {
             System.out.println("Correct!");
             isCorrect = true;
@@ -62,13 +62,13 @@ public class Calc implements GameInterface {
 
         switch (action) {
             case MULTIPLY:
-                result = first * second;
+                calcValue = first * second;
                 break;
             case ADD:
-                result = first + second;
+                calcValue = first + second;
                 break;
             case SUBTRACT:
-                result = first - second;
+                calcValue = first - second;
                 break;
             default:
                 new RuntimeException("unknown action: " + action);
