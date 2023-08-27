@@ -32,6 +32,7 @@ public class App {
 
                 case "1":
                     Cli.greetings();
+                    isExit = true;
                     break;
 
                 case "2":
