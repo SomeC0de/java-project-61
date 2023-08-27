@@ -15,7 +15,7 @@ public class Progression implements GameInterface {
     private static final int START_VALUE_LOW_LIMIT = 0;
     private static final int START_VALUE_HIGH_LIMIT = 20;
     private static int missedValue;
-    int answerUser;
+    private static int answerUser;
     public void initGame() {
         inputScan = new Scanner(System.in);
     }

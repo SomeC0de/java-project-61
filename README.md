@@ -6,3 +6,4 @@ Video demonstrates general features of the game (Even): 	https://asciinema.org/a
 Video demonstrates general features of the game (Calculator): 	https://asciinema.org/a/kqwes0u7B2iZhbaqU7RD9ELE4
 Video demonstrates general features of the game (GCD):		https://asciinema.org/a/bFSuH5np6si4dPW95rFPAtuoC
 Video demonstrates general features of the game (Progression):	https://asciinema.org/a/go38ZUI5TZ7eFKgcuaQEc9dkM
+Video demonstrates general features of the game (Prime):	https://asciinema.org/a/kw0RpGZ2uysNuCbZQX809H9t6

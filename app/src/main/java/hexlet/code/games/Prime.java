@@ -5,13 +5,13 @@ import hexlet.code.RandomGenerator;
 
 import java.util.Scanner;
 
-public class Gcd implements GameInterface {
+public class Prime implements GameInterface {
     private static String userName;
     Scanner inputScan;
-    private static final int LOW_LIMIT = 0;
+    private static final int LOW_LIMIT = 1;
     private static final int HIGH_LIMIT = 100;
-    private static int result;
-    private static int answerUser;
+    private static int question;
+    private static String answerUser;
     public void initGame() {
         inputScan = new Scanner(System.in);
     }
@@ -23,25 +23,32 @@ public class Gcd implements GameInterface {
         System.out.println("Hello, " + userName + "!");
     }
     public void explainRules() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
     public void generateQuestion() {
-        generateGcdAndShow();
+        generateAndShow();
     }
     public void getAnswer() {
-        answerUser = inputScan.nextInt();
+        answerUser = inputScan.nextLine();
     }
     public boolean isAnswerCorrect() {
         boolean isCorrect = false;
+        String answerCorrect;
 
         System.out.println("Your answer: " + answerUser);
 
-        if (answerUser == result) {
+        if (isPrime(question)) {
+            answerCorrect = "yes";
+        } else {
+            answerCorrect = "no";
+        }
+
+        if (answerUser.equals(answerCorrect)) {
             System.out.println("Correct!");
             isCorrect = true;
         } else {
             System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + result + "'");
+                    + "'" + answerCorrect + "'");
         }
 
         return isCorrect;
@@ -54,24 +61,27 @@ public class Gcd implements GameInterface {
         }
     }
 
-    private static int calculateGcd(int first, int second) {
-        int calcValue = 0;
-
-        if (0 == second) {
-            calcValue = first;
-        } else {
-            calcValue = calculateGcd(second, first % second);
-        }
-
-        return calcValue;
+    private static void generateAndShow() {
+        question = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        System.out.println("Question: " + question);
     }
 
-    private static void generateGcdAndShow() {
-        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+    private static boolean isPrime(int value) {
+        boolean isPrime = false;
 
-        result = calculateGcd(firstValue, secondValue);
-        System.out.println("Question: " + firstValue + " " + secondValue);
+        if (value > 1) {
+            for (int idx = 2; idx < value / 2; idx++) {
+                if (0 == (value % idx)) {
+                    isPrime = false;
+                    break;
+                } else {
+                    isPrime = true;
+                }
+            }
+        } else {
+            isPrime = true;
+        }
 
+        return isPrime;
     }
 }
