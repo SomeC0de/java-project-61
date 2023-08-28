@@ -38,26 +38,31 @@ public class App {
                 case "2":
                     Engine newGameEven = new Engine();
                     newGameEven.runEngine(Engine.ID_GAME_EVEN);
+                    isExit = true;
                     break;
 
                 case "3":
                     Engine newGameCalc = new Engine();
                     newGameCalc.runEngine(Engine.ID_GAME_CALC);
+                    isExit = true;
                     break;
 
                 case "4":
                     Engine newGameGcd = new Engine();
                     newGameGcd.runEngine(Engine.ID_GAME_GCD);
+                    isExit = true;
                     break;
 
                 case "5":
                     Engine newGameProgression = new Engine();
                     newGameProgression.runEngine(Engine.ID_GAME_PROGRESSION);
+                    isExit = true;
                     break;
 
                 case "6":
                     Engine newGamePrime = new Engine();
                     newGamePrime.runEngine(Engine.ID_GAME_PRIME);
+                    isExit = true;
                     break;
 
                 default:
