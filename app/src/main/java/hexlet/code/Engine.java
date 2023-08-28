@@ -34,9 +34,9 @@ public class Engine {
             case ID_GAME_PRIME:
                 arrayGamesMethods[idGame].initGame();
                 arrayGamesMethods[idGame].sayHello();
+                arrayGamesMethods[idGame].explainRules();
 
                 for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
-                    arrayGamesMethods[idGame].explainRules();
                     arrayGamesMethods[idGame].generateQuestion();
                     arrayGamesMethods[idGame].getAnswer();
 

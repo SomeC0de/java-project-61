@@ -22,7 +22,7 @@ public class Even implements GameInterface {
         System.out.println("Hello, " + userName + "!");
     }
     public void explainRules() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
     public void generateQuestion() {
         newVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
