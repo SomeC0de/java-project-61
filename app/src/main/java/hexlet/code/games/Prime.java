@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Prime implements GameInterface {
     private static String userName;
-    Scanner inputScan;
+    private Scanner inputScan;
     private static final int LOW_LIMIT = 1;
     private static final int HIGH_LIMIT = 100;
     private static int question;

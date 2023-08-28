@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Calc implements GameInterface {
     private static String userName;
-    Scanner inputScan;
+    private Scanner inputScan;
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     private static final int MULTIPLY = 0;
     private static final int ADD = 1;
     private static final int SUBTRACT = 2;
     private static int result;
-    int answerUser;
+    private int answerUser;
     public void initGame() {
         inputScan = new Scanner(System.in);
     }

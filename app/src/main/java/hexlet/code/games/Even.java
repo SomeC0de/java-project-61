@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Even implements GameInterface {
     private static String userName;
-    Scanner inputScan;
+    private static Scanner inputScan;
     private static int newVal;
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;

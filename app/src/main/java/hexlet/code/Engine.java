@@ -16,12 +16,12 @@ public class Engine {
     public static final int ID_GAME_GCD = 4;
     public static final int ID_GAME_PROGRESSION = 5;
     public static final int ID_GAME_PRIME = 6;
-    Even gameEven = new Even();
-    Calc gameCalc = new Calc();
-    Gcd gameGcd = new Gcd();
-    Progression gameProgression = new Progression();
-    Prime gamePrime = new Prime();
-    GameInterface[] arrayGamesMethods = {null, null, gameEven, gameCalc, gameGcd, gameProgression, gamePrime};
+    private Even gameEven = new Even();
+    private Calc gameCalc = new Calc();
+    private Gcd gameGcd = new Gcd();
+    private Progression gameProgression = new Progression();
+    private Prime gamePrime = new Prime();
+    private GameInterface[] arrayGamesMethods = {null, null, gameEven, gameCalc, gameGcd, gameProgression, gamePrime};
 
     public void runEngine(int idGame) {
         int trialNum;
