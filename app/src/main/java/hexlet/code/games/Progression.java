@@ -74,7 +74,7 @@ public class Progression implements GameInterface {
         int seqStep = RandomGenerator.generateRandomInt(STEP_LOW_LIMIT, STEP_HIGH_LIMIT);
 
         int[] arithmeticProgression = generateProgression(seqStep, seqLength, seqStartValue);
-        int missedIdx = RandomGenerator.generateRandomInt(0, seqLength);
+        int missedIdx = RandomGenerator.generateRandomInt(0, seqLength - 1);
 
         missedValue = arithmeticProgression[missedIdx];
 
