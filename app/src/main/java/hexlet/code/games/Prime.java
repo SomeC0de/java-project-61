@@ -5,7 +5,7 @@ import hexlet.code.RandomGenerator;
 
 import java.util.Scanner;
 
-public class Prime implements GameInterface {
+public final class Prime implements GameInterface {
     private static String userName;
     private Scanner inputScan;
     private static final int LOW_LIMIT = 1;

@@ -4,7 +4,7 @@ import hexlet.code.RandomGenerator;
 
 import java.util.Scanner;
 
-public class Even implements GameInterface {
+public final class Even implements GameInterface {
     private static String userName;
     private static Scanner inputScan;
     private static int newVal;

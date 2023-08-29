@@ -5,7 +5,7 @@ import hexlet.code.RandomGenerator;
 
 import java.util.Scanner;
 
-public class Calc implements GameInterface {
+public final class Calc implements GameInterface {
     private static String userName;
     private Scanner inputScan;
     private static final int LOW_LIMIT = -10;
@@ -81,7 +81,6 @@ public class Calc implements GameInterface {
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        String actionWord = null;
 
         result = calculateResult(firstValue, secondValue, actionId);
 
