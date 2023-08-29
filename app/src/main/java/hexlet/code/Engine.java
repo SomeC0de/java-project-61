@@ -16,22 +16,22 @@ public final class Engine {
     public static final int ID_GAME_GCD = 4;
     public static final int ID_GAME_PROGRESSION = 5;
     public static final int ID_GAME_PRIME = 6;
-    private final Even gameEven = new Even();
-    private final Calc gameCalc = new Calc();
-    private final Gcd gameGcd = new Gcd();
-    private final Progression gameProgression = new Progression();
-    private final Prime gamePrime = new Prime();
-    private final GameInterface[] GAMES_LIST = {null, null, gameEven, gameCalc, gameGcd, gameProgression, gamePrime};
+    private static final Even GAME_EVEN = new Even();
+    private static final Calc GAME_CALC = new Calc();
+    private static final Gcd GAME_GCD = new Gcd();
+    private static final Progression GAME_PROGRESSION = new Progression();
+    private static final Prime GAME_PRIME = new Prime();
+    private static final GameInterface[] GAMES_LIST;
+
+    static {
+        GAMES_LIST = new GameInterface[]{null, null, GAME_EVEN, GAME_CALC, GAME_GCD, GAME_PROGRESSION, GAME_PRIME};
+    }
 
     public void runEngine(int idGame) {
         int trialNum;
 
         switch (idGame) {
-            case ID_GAME_EVEN:
-            case ID_GAME_CALC:
-            case ID_GAME_GCD:
-            case ID_GAME_PROGRESSION:
-            case ID_GAME_PRIME:
+            case ID_GAME_EVEN, ID_GAME_CALC, ID_GAME_GCD, ID_GAME_PROGRESSION, ID_GAME_PRIME -> {
                 GAMES_LIST[idGame].initGame();
                 GAMES_LIST[idGame].sayHello();
                 GAMES_LIST[idGame].explainRules();
@@ -44,12 +44,10 @@ public final class Engine {
                         break;
                     }
                 }
-
                 GAMES_LIST[idGame].sayGoodbye(trialNum, TRIAL_MAX_CNT);
-                break;
-
-            default:
-                break;
+            }
+            default -> {
+            }
         }
     }
 }
