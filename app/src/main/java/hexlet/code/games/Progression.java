@@ -30,7 +30,25 @@ public final class Progression implements GameInterface {
         System.out.println("What number is missing in the progression?");
     }
     public void generateQuestion() {
-        generateAndShow();
+        int seqStartValue = RandomGenerator.generateRandomInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);
+        int seqLength = RandomGenerator.generateRandomInt(LENGTH_LOW_LIMIT, LENGTH_HIGH_LIMIT);
+        int seqStep = RandomGenerator.generateRandomInt(STEP_LOW_LIMIT, STEP_HIGH_LIMIT);
+
+        int[] arithmeticProgression = generateProgression(seqStep, seqLength, seqStartValue);
+        int missedIdx = RandomGenerator.generateRandomInt(0, seqLength - 1);
+
+        missedValue = arithmeticProgression[missedIdx];
+
+        System.out.print("Question: ");
+
+        for (int idx = 0; idx < arithmeticProgression.length; idx++) {
+            if (idx != missedIdx) {
+                System.out.print(arithmeticProgression[idx] + " ");
+            } else {
+                System.out.print(".. ");
+            }
+        }
+        System.out.println("");
     }
     public void getAnswer() {
         answerUser = inputScan.nextInt();
@@ -66,27 +84,5 @@ public final class Progression implements GameInterface {
             progression[idx] = initVal + nextVal;
         }
         return progression;
-    }
-
-    private static void generateAndShow() {
-        int seqStartValue = RandomGenerator.generateRandomInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);
-        int seqLength = RandomGenerator.generateRandomInt(LENGTH_LOW_LIMIT, LENGTH_HIGH_LIMIT);
-        int seqStep = RandomGenerator.generateRandomInt(STEP_LOW_LIMIT, STEP_HIGH_LIMIT);
-
-        int[] arithmeticProgression = generateProgression(seqStep, seqLength, seqStartValue);
-        int missedIdx = RandomGenerator.generateRandomInt(0, seqLength - 1);
-
-        missedValue = arithmeticProgression[missedIdx];
-
-        System.out.print("Question: ");
-
-        for (int idx = 0; idx < arithmeticProgression.length; idx++) {
-            if (idx != missedIdx) {
-                System.out.print(arithmeticProgression[idx] + " ");
-            } else {
-                System.out.print(".. ");
-            }
-        }
-        System.out.println("");
     }
 }

@@ -29,7 +29,26 @@ public final class Calc implements GameInterface {
         System.out.println("What is the result of the expression?");
     }
     public void generateQuestion() {
-        generateAndShow();
+        int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
+        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+
+        result = calculateResult(firstValue, secondValue, actionId);
+
+        switch (actionId) {
+            case MULTIPLY:
+                System.out.println("Question: " + firstValue + " * " + secondValue);
+                break;
+            case ADD:
+                System.out.println("Question: " + firstValue + " + " + secondValue);
+                break;
+            case SUBTRACT:
+                System.out.println("Question: " + firstValue + " - " + secondValue);
+                break;
+            default:
+                new RuntimeException("unknown action: " + actionId);
+                break;
+        }
     }
     public void getAnswer() {
         answerUser = inputScan.nextInt();
@@ -75,28 +94,5 @@ public final class Calc implements GameInterface {
                 break;
         }
         return calcValue;
-    }
-
-    private static void generateAndShow() {
-        int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
-        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-
-        result = calculateResult(firstValue, secondValue, actionId);
-
-        switch (actionId) {
-            case MULTIPLY:
-                System.out.println("Question: " + firstValue + " * " + secondValue);
-                break;
-            case ADD:
-                System.out.println("Question: " + firstValue + " + " + secondValue);
-                break;
-            case SUBTRACT:
-                System.out.println("Question: " + firstValue + " - " + secondValue);
-                break;
-            default:
-                new RuntimeException("unknown action: " + actionId);
-                break;
-        }
     }
 }

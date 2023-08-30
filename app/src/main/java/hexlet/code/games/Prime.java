@@ -26,7 +26,8 @@ public final class Prime implements GameInterface {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
     public void generateQuestion() {
-        generateAndShow();
+        question = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        System.out.println("Question: " + question);
     }
     public void getAnswer() {
         answerUser = inputScan.nextLine();
@@ -60,12 +61,6 @@ public final class Prime implements GameInterface {
             System.out.println("Let's try again, " + userName + "!");
         }
     }
-
-    private static void generateAndShow() {
-        question = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        System.out.println("Question: " + question);
-    }
-
     private static boolean isPrime(int value) {
         boolean isPrime = false;
 

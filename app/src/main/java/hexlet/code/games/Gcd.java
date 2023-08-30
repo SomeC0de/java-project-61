@@ -26,7 +26,11 @@ public final class Gcd implements GameInterface {
         System.out.println("Find the greatest common divisor of given numbers.");
     }
     public void generateQuestion() {
-        generateGcdAndShow();
+        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+
+        result = calculateGcd(firstValue, secondValue);
+        System.out.println("Question: " + firstValue + " " + secondValue);
     }
     public void getAnswer() {
         answerUser = inputScan.nextInt();
@@ -64,14 +68,5 @@ public final class Gcd implements GameInterface {
         }
 
         return calcValue;
-    }
-
-    private static void generateGcdAndShow() {
-        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-
-        result = calculateGcd(firstValue, secondValue);
-        System.out.println("Question: " + firstValue + " " + secondValue);
-
     }
 }
