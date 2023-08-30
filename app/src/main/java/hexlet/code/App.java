@@ -2,6 +2,16 @@ package hexlet.code;
 
 import java.util.Scanner;
 
+import hexlet.code.games.Even;
+
+import hexlet.code.games.Calc;
+
+import hexlet.code.games.Gcd;
+
+import hexlet.code.games.Progression;
+
+import hexlet.code.games.Prime;
+
 public class App {
 
     public static void main(String[] args) {
@@ -12,7 +22,7 @@ public class App {
 
             System.out.println("Please enter the game number and press Enter.");
             System.out.println(
-                    "1 - Greet\n"
+                      "1 - Greet\n"
                     + "2 - Even\n"
                     + "3 - Calculator\n"
                     + "4 - GCD\n"
@@ -36,32 +46,32 @@ public class App {
                     break;
 
                 case "2":
-                    Engine newGameEven = new Engine();
-                    newGameEven.runEngine(Engine.ID_GAME_EVEN);
+                    Even gameEven = new Even();
+                    Engine.runEngine(gameEven);
                     isExit = true;
                     break;
 
                 case "3":
-                    Engine newGameCalc = new Engine();
-                    newGameCalc.runEngine(Engine.ID_GAME_CALC);
+                    Calc gameCalc = new Calc();
+                    Engine.runEngine(gameCalc);
                     isExit = true;
                     break;
 
                 case "4":
-                    Engine newGameGcd = new Engine();
-                    newGameGcd.runEngine(Engine.ID_GAME_GCD);
+                    Gcd gameGcd = new Gcd();
+                    Engine.runEngine(gameGcd);
                     isExit = true;
                     break;
 
                 case "5":
-                    Engine newGameProgression = new Engine();
-                    newGameProgression.runEngine(Engine.ID_GAME_PROGRESSION);
+                    Progression gameProgression = new Progression();
+                    Engine.runEngine(gameProgression);
                     isExit = true;
                     break;
 
                 case "6":
-                    Engine newGamePrime = new Engine();
-                    newGamePrime.runEngine(Engine.ID_GAME_PRIME);
+                    Prime gamePrime = new Prime();
+                    Engine.runEngine(gamePrime);
                     isExit = true;
                     break;
 
