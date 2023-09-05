@@ -1,11 +1,16 @@
 package hexlet.code;
+
+import java.util.Scanner;
+
 public class Engine {
     private static final int TRIAL_MAX_CNT = 3;
-
+    private static String userId;
+    private static Scanner scanEngine;
     public static void runEngine(GameInterface game) {
         int trialNum;
+        scanEngine = new Scanner(System.in);
 
-        game.sayHello();
+        greetings();
         game.explainRules();
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
@@ -17,5 +22,17 @@ public class Engine {
             }
         }
         game.sayGoodbye(trialNum, TRIAL_MAX_CNT);
+    }
+
+    private static String scanUserId() {
+        return scanEngine.nextLine();
+    }
+    public static void greetings() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+
+        userId = scanUserId();
+
+        System.out.println("Hello, " + userId + "!");
     }
 }

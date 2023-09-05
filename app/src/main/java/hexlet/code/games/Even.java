@@ -12,13 +12,6 @@ public final class Even implements GameInterface {
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     private static String answerUser;
-    public void sayHello() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-
-        userName = inputScan.nextLine();
-        System.out.println("Hello, " + userName + "!");
-    }
     public void explainRules() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }

@@ -13,13 +13,6 @@ public final class Gcd implements GameInterface {
     private static final int HIGH_LIMIT = 100;
     private static int result;
     private static int answerUser;
-    public void sayHello() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-
-        userName = inputScan.nextLine();
-        System.out.println("Hello, " + userName + "!");
-    }
     public void explainRules() {
         System.out.println("Find the greatest common divisor of given numbers.");
     }

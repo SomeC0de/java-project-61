@@ -13,13 +13,6 @@ public final class Prime implements GameInterface {
     private static final int HIGH_LIMIT = 100;
     private static int question;
     private static String answerUser;
-    public void sayHello() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-
-        userName = inputScan.nextLine();
-        System.out.println("Hello, " + userName + "!");
-    }
     public void explainRules() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
