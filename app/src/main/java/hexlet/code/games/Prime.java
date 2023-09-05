@@ -63,21 +63,13 @@ public final class Prime implements GameInterface {
         }
     }
     private static boolean isPrime(int value) {
-        boolean isPrime = false;
+        if (value <= 1) return false;
 
-        if (value > 1) {
-            for (int idx = 2; idx < value / 2; idx++) {
-                if (0 == (value % idx)) {
-                    isPrime = false;
-                    break;
-                } else {
-                    isPrime = true;
-                }
+        for (int idx = 2; idx < value / 2; idx++) {
+            if ((value % idx) == 0) {
+                return false;
             }
-        } else {
-            isPrime = true;
         }
-
-        return isPrime;
+        return true;
     }
 }
