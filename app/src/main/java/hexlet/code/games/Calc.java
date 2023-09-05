@@ -16,8 +16,8 @@ public final class Calc implements GameInterface {
     private static final int SUBTRACT = 2;
     private int result;
     private int answerUser;
-    public void explainRules() {
-        System.out.println("What is the result of the expression?");
+    public String getRules() {
+        return "What is the result of the expression?";
     }
     public void generateQuestion() {
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);

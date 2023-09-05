@@ -17,8 +17,8 @@ public final class Progression implements GameInterface {
     private static final int START_VALUE_HIGH_LIMIT = 20;
     private static int missedValue;
     private static int answerUser;
-    public void explainRules() {
-        System.out.println("What number is missing in the progression?");
+    public String getRules() {
+        return "What number is missing in the progression?";
     }
     public void generateQuestion() {
         int seqStartValue = RandomGenerator.generateRandomInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);

@@ -11,7 +11,7 @@ public class Engine {
         scanEngine = new Scanner(System.in);
 
         greetings();
-        game.explainRules();
+        System.out.println(game.getRules());
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
             game.generateQuestion();

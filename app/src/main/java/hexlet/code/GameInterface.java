@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public interface GameInterface {
-    void explainRules();
+    String getRules();
     void generateQuestion();
     void getAnswer();
     boolean isAnswerCorrect();

@@ -12,8 +12,8 @@ public final class Even implements GameInterface {
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     private static String answerUser;
-    public void explainRules() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    public String getRules() {
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
     public void generateQuestion() {
         newVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);

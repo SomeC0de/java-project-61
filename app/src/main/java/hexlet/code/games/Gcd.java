@@ -13,8 +13,8 @@ public final class Gcd implements GameInterface {
     private static final int HIGH_LIMIT = 100;
     private static int result;
     private static int answerUser;
-    public void explainRules() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public String getRules() {
+        return "Find the greatest common divisor of given numbers.";
     }
     public void generateQuestion() {
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);

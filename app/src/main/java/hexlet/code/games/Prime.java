@@ -13,8 +13,8 @@ public final class Prime implements GameInterface {
     private static final int HIGH_LIMIT = 100;
     private static int question;
     private static String answerUser;
-    public void explainRules() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public String getRules() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
     public void generateQuestion() {
         question = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
