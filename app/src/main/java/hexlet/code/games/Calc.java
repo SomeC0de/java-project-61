@@ -16,9 +16,6 @@ public final class Calc implements GameInterface {
     private static final int SUBTRACT = 2;
     private int result;
     private int answerUser;
-    public void initGame() {
-        inputScan = new Scanner(System.in);
-    }
     public void sayHello() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");

@@ -5,7 +5,6 @@ public class Engine {
     public static void runEngine(GameInterface game) {
         int trialNum;
 
-        game.initGame();
         game.sayHello();
         game.explainRules();
 

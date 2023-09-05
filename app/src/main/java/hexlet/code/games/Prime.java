@@ -13,9 +13,6 @@ public final class Prime implements GameInterface {
     private static final int HIGH_LIMIT = 100;
     private static int question;
     private static String answerUser;
-    public void initGame() {
-        inputScan = new Scanner(System.in);
-    }
     public void sayHello() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");

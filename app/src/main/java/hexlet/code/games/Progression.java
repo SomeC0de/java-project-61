@@ -17,9 +17,6 @@ public final class Progression implements GameInterface {
     private static final int START_VALUE_HIGH_LIMIT = 20;
     private static int missedValue;
     private static int answerUser;
-    public void initGame() {
-        inputScan = new Scanner(System.in);
-    }
     public void sayHello() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
