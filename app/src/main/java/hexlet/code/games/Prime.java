@@ -60,7 +60,9 @@ public final class Prime implements GameInterface {
         }
     }
     private static boolean isPrime(int value) {
-        if (value <= 1) return false;
+        if (value <= 1) {
+            return false;
+        }
 
         for (int idx = 2; idx < value / 2; idx++) {
             if ((value % idx) == 0) {
