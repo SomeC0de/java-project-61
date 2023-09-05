@@ -14,7 +14,7 @@ public final class Calc implements GameInterface {
     private static final int MULTIPLY = 0;
     private static final int ADD = 1;
     private static final int SUBTRACT = 2;
-    private static int result;
+    private int result;
     private int answerUser;
     public void initGame() {
         inputScan = new Scanner(System.in);
