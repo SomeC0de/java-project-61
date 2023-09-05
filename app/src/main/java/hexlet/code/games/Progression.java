@@ -6,6 +6,7 @@ import hexlet.code.RandomGenerator;
 import java.util.Scanner;
 
 public final class Progression implements GameInterface {
+    public static final String ID_PROGRESSION = "5";
     private static String userName;
     private static Scanner inputScan;
     private static final int STEP_LOW_LIMIT = 1;

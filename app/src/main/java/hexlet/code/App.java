@@ -13,79 +13,63 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
 public class App {
-
+    private static final String EXIT_ID = "0";
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String actionType;
+        String actionId;
 
-        while (true) {
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println(
+                Cli.ID_GREETING +  " - Greet\n"
+                + Even.ID_EVEN + " - Even\n"
+                + Calc.ID_CALC + " - Calculator\n"
+                + Gcd.ID_GCD + " - GCD\n"
+                + Progression.ID_PROGRESSION + " - Progression\n"
+                + Prime.ID_PRIME + " - Prime\n"
+                + EXIT_ID + " - Exit");
 
-            System.out.println("Please enter the game number and press Enter.");
-            System.out.println(
-                      "1 - Greet\n"
-                    + "2 - Even\n"
-                    + "3 - Calculator\n"
-                    + "4 - GCD\n"
-                    + "5 - Progression\n"
-                    + "6 - Prime\n"
-                    + "0 - Exit");
+        actionId = scanner.nextLine();
 
-            boolean isExit = false;
-            actionType = scanner.nextLine();
+        System.out.println("Your choice: " + actionId + "\n");
 
-            System.out.println("Your choice: " + actionType + "\n");
-
-            switch (actionType) {
-                case "0":
-                    isExit = true;
-                    break;
-
-                case "1":
-                    Cli.greetings();
-                    isExit = true;
-                    break;
-
-                case "2":
-                    Even gameEven = new Even();
-                    Engine.runEngine(gameEven);
-                    isExit = true;
-                    break;
-
-                case "3":
-                    Calc gameCalc = new Calc();
-                    Engine.runEngine(gameCalc);
-                    isExit = true;
-                    break;
-
-                case "4":
-                    Gcd gameGcd = new Gcd();
-                    Engine.runEngine(gameGcd);
-                    isExit = true;
-                    break;
-
-                case "5":
-                    Progression gameProgression = new Progression();
-                    Engine.runEngine(gameProgression);
-                    isExit = true;
-                    break;
-
-                case "6":
-                    Prime gamePrime = new Prime();
-                    Engine.runEngine(gamePrime);
-                    isExit = true;
-                    break;
-
-                default:
-                    System.out.println("Unknown character");
-                    isExit = true;
-                    break;
-            }
-            System.out.println("");
-
-            if (isExit) {
+        switch (actionId) {
+            case EXIT_ID:
                 break;
-            }
+
+            case Cli.ID_GREETING:
+                Cli.greetings();
+                break;
+
+            case Even.ID_EVEN:
+                Even gameEven = new Even();
+                Engine.runEngine(gameEven);
+                break;
+
+            case Calc.ID_CALC:
+                Calc gameCalc = new Calc();
+                Engine.runEngine(gameCalc);
+                break;
+
+            case Gcd.ID_GCD:
+                Gcd gameGcd = new Gcd();
+                Engine.runEngine(gameGcd);
+                break;
+
+            case Progression.ID_PROGRESSION:
+                Progression gameProgression = new Progression();
+                Engine.runEngine(gameProgression);
+                break;
+
+            case Prime.ID_PRIME:
+                Prime gamePrime = new Prime();
+                Engine.runEngine(gamePrime);
+                break;
+
+            default:
+                System.out.println("Unknown game number: " + actionId);
+                break;
         }
+        System.out.println("");
         scanner.close();
     }
 

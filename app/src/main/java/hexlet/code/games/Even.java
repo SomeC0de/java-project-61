@@ -5,6 +5,7 @@ import hexlet.code.RandomGenerator;
 import java.util.Scanner;
 
 public final class Even implements GameInterface {
+    public static final String ID_EVEN = "2";
     private static String userName;
     private static Scanner inputScan;
     private static int newVal;

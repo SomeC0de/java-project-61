@@ -6,6 +6,7 @@ import hexlet.code.RandomGenerator;
 import java.util.Scanner;
 
 public final class Calc implements GameInterface {
+    public static final String ID_CALC = "3";
     private static String userName;
     private Scanner inputScan;
     private static final int LOW_LIMIT = -10;

@@ -6,6 +6,7 @@ import hexlet.code.RandomGenerator;
 import java.util.Scanner;
 
 public final class Gcd implements GameInterface {
+    public static final String ID_GCD = "4";
     private static String userName;
     private static Scanner inputScan;
     private static final int LOW_LIMIT = 0;
