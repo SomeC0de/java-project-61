@@ -34,7 +34,7 @@ public final class Even implements GameInterface {
     }
     public boolean isAnswerCorrect() {
         boolean isCorrect = false;
-        String answerCorrect = (0 == (newVal % 2)) ? "yes" : "no";
+        String answerCorrect = isEven(newVal);
 
         if (answerUser.equals(answerCorrect)) {
             System.out.println("Correct!");
@@ -52,5 +52,9 @@ public final class Even implements GameInterface {
         } else {
             System.out.println("Let's try again, " + userName + "!");
         }
+    }
+
+    private static String isEven(int val) {
+        return (0 == (newVal % 2)) ? "yes" : "no";
     }
 }
