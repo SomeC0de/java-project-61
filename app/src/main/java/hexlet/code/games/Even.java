@@ -45,6 +45,6 @@ public final class Even implements GameInterface {
     }
 
     private static String isEven(int val) {
-        return (0 == (newVal % 2)) ? "yes" : "no";
+        return (0 == (val % 2)) ? "yes" : "no";
     }
 }
