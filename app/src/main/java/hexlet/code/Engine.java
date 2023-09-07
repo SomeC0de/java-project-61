@@ -11,28 +11,69 @@ public class Engine {
         scanEngine = new Scanner(System.in);
 
         greetings();
-        System.out.println(game.getRules());
+        printRules(game);
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
-            game.generateQuestion();
-            game.getAnswer();
+            String actualGameData[] = game.getGameData();
+            askQuestion(actualGameData[GameInterface.GAME_DATA_QUEST_IDX]);
 
-            if (!game.isAnswerCorrect()) {
+            String userAnswer = getAnswer();
+
+            if (!isAnswerCorrect(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX])) {
+                printTrialFault(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX]);
                 break;
+            } else {
+                printTrialOk();
             }
         }
-        game.sayGoodbye(trialNum, TRIAL_MAX_CNT);
+
+        sayGoodbye(userId, trialNum, TRIAL_MAX_CNT);
     }
 
     private static String scanUserId() {
         return scanEngine.nextLine();
     }
-    public static void greetings() {
+    private static void greetings() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
 
         userId = scanUserId();
 
         System.out.println("Hello, " + userId + "!");
+    }
+
+    private static void printRules(GameInterface game) {
+        System.out.println(game.getRules());
+    }
+    private static void askQuestion(String questionData) {
+        System.out.println("Question: " + questionData);
+    }
+
+    private static String getAnswer() {
+        return scanEngine.nextLine();
+    }
+
+    private static void printUserAnswer(String userAnswer) {
+        System.out.println("Your answer: " + userAnswer);
+    }
+    private static boolean isAnswerCorrect(String userAnswer, String correctAnswer) {
+        return userAnswer.equals(correctAnswer) ? true : false;
+    }
+
+    private static void printTrialOk() {
+        System.out.println("Correct!");
+    }
+
+    private static void printTrialFault(String userAnswer, String correctAnswer) {
+        System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer
+                + "'");
+
+    }
+    private static void sayGoodbye(String userName, int correctAttempts, int winCondition) {
+        if (winCondition == correctAttempts) {
+            System.out.println("Congratulations, " + userName + "!");
+        } else {
+            System.out.println("Let's try again, " + userName + "!");
+        }
     }
 }

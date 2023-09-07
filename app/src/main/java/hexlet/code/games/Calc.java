@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public final class Calc implements GameInterface {
     public static final String ID_CALC = "3";
-    private static String userName;
-    private Scanner inputScan;
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     private static final int MULTIPLY = 0;
@@ -19,55 +17,33 @@ public final class Calc implements GameInterface {
     public String getRules() {
         return "What is the result of the expression?";
     }
-    public void generateQuestion() {
+    public String[] getGameData() {
+        String[] gameData = new String[GAME_DATA_LEN];
+
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
-        result = calculateResult(firstValue, secondValue, actionId);
-
         switch (actionId) {
             case MULTIPLY:
-                System.out.println("Question: " + firstValue + " * " + secondValue);
+                gameData[GAME_DATA_QUEST_IDX] = firstValue + " * " + secondValue;
                 break;
             case ADD:
-                System.out.println("Question: " + firstValue + " + " + secondValue);
+                gameData[GAME_DATA_QUEST_IDX] = firstValue + " + " + secondValue;
                 break;
             case SUBTRACT:
-                System.out.println("Question: " + firstValue + " - " + secondValue);
+                gameData[GAME_DATA_QUEST_IDX] = firstValue + " - " + secondValue;
                 break;
             default:
                 new RuntimeException("unknown action: " + actionId);
                 break;
         }
-    }
-    public void getAnswer() {
-        answerUser = inputScan.nextInt();
-    }
-    public boolean isAnswerCorrect() {
-        boolean isCorrect = false;
 
-        System.out.println("Your answer: " + answerUser);
+        gameData[GAME_DATA_ANSW_IDX] = calculateResult(firstValue, secondValue, actionId);
 
-        if (answerUser == result) {
-            System.out.println("Correct!");
-            isCorrect = true;
-        } else {
-            System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + result + "'");
-        }
-
-        return isCorrect;
+        return gameData;
     }
-    public void sayGoodbye(int correctAttempts, int winCondition) {
-        if (winCondition == correctAttempts) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
-        }
-    }
-
-    private static int calculateResult(int first, int second, int action) {
+    private static String calculateResult(int first, int second, int action) {
         int calcValue = 0;
 
         switch (action) {
@@ -84,6 +60,6 @@ public final class Calc implements GameInterface {
                 new RuntimeException("unknown action: " + action);
                 break;
         }
-        return calcValue;
+        return Integer.toString(calcValue);
     }
 }
