@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Scanner;
-
 public final class Calc implements GameInterface {
     public static final String ID_CALC = "3";
     private static final int LOW_LIMIT = -10;
@@ -12,8 +10,6 @@ public final class Calc implements GameInterface {
     private static final int MULTIPLY = 0;
     private static final int ADD = 1;
     private static final int SUBTRACT = 2;
-    private int result;
-    private int answerUser;
     public String getRules() {
         return "What is the result of the expression?";
     }
@@ -60,6 +56,7 @@ public final class Calc implements GameInterface {
                 new RuntimeException("unknown action: " + action);
                 break;
         }
+
         return Integer.toString(calcValue);
     }
 }
