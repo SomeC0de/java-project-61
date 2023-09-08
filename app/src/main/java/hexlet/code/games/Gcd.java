@@ -3,54 +3,27 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Scanner;
-
 public final class Gcd implements GameInterface {
     public static final String ID_GCD = "4";
-    private static String userName;
-    private static Scanner inputScan;
     private static final int LOW_LIMIT = 0;
     private static final int HIGH_LIMIT = 100;
-    private static int result;
-    private static int answerUser;
     public String getRules() {
         return "Find the greatest common divisor of given numbers.";
     }
-    public void generateQuestion() {
+    public String[] getGameData() {
+        String[] gameData = new String[GAME_DATA_LEN];
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int gcdValue = calculateGcd(firstValue, secondValue);
 
-        result = calculateGcd(firstValue, secondValue);
-        System.out.println("Question: " + firstValue + " " + secondValue);
-    }
-    public void getAnswer() {
-        answerUser = inputScan.nextInt();
-    }
-    public boolean isAnswerCorrect() {
-        boolean isCorrect = false;
+        gameData[GAME_DATA_QUEST_IDX] = firstValue + " " + secondValue;
+        gameData[GAME_DATA_ANSW_IDX] = Integer.toString(gcdValue);
 
-        System.out.println("Your answer: " + answerUser);
-
-        if (answerUser == result) {
-            System.out.println("Correct!");
-            isCorrect = true;
-        } else {
-            System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + result + "'");
-        }
-
-        return isCorrect;
-    }
-    public void sayGoodbye(int correctAttempts, int winCondition) {
-        if (winCondition == correctAttempts) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
-        }
+        return gameData;
     }
 
     private static int calculateGcd(int first, int second) {
-        int calcValue = 0;
+        int calcValue;
 
         if (0 == second) {
             calcValue = first;
