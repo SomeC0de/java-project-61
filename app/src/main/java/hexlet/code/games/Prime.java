@@ -3,65 +3,32 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Scanner;
-
 public final class Prime implements GameInterface {
     public static final String ID_PRIME = "6";
-    private static String userName;
-    private Scanner inputScan;
     private static final int LOW_LIMIT = 1;
     private static final int HIGH_LIMIT = 100;
-    private static int question;
-    private static String answerUser;
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
-    public void generateQuestion() {
-        question = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        System.out.println("Question: " + question);
-    }
-    public void getAnswer() {
-        answerUser = inputScan.nextLine();
-    }
-    public boolean isAnswerCorrect() {
-        boolean isCorrect = false;
-        String answerCorrect;
+    public String[] getGameData() {
+        String[] gameData = new String[GAME_DATA_LEN];
+        int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
-        System.out.println("Your answer: " + answerUser);
+        gameData[GAME_DATA_QUEST_IDX] = Integer.toString(questionValue);
+        gameData[GAME_DATA_ANSW_IDX] = isPrime(questionValue);
 
-        if (isPrime(question)) {
-            answerCorrect = "yes";
-        } else {
-            answerCorrect = "no";
-        }
-
-        if (answerUser.equals(answerCorrect)) {
-            System.out.println("Correct!");
-            isCorrect = true;
-        } else {
-            System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + answerCorrect + "'");
-        }
-
-        return isCorrect;
+        return gameData;
     }
-    public void sayGoodbye(int correctAttempts, int winCondition) {
-        if (winCondition == correctAttempts) {
-            System.out.println("Congratulations, " + userName + "!");
-        } else {
-            System.out.println("Let's try again, " + userName + "!");
-        }
-    }
-    private static boolean isPrime(int value) {
+    private static String isPrime(int value) {
         if (value <= 1) {
-            return false;
+            return "no";
         }
 
         for (int idx = 2; idx < value / 2; idx++) {
             if ((value % idx) == 0) {
-                return false;
+                return "no";
             }
         }
-        return true;
+        return "yes";
     }
 }
