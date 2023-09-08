@@ -14,10 +14,11 @@ public class Engine {
         printRules(game);
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
-            String actualGameData[] = game.getGameData();
+            String[] actualGameData = game.getGameData();
             askQuestion(actualGameData[GameInterface.GAME_DATA_QUEST_IDX]);
 
             String userAnswer = getAnswer();
+            printUserAnswer(userAnswer);
 
             if (!isAnswerCorrect(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX])) {
                 printTrialFault(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX]);
@@ -27,7 +28,7 @@ public class Engine {
             }
         }
 
-        sayGoodbye(userId, trialNum, TRIAL_MAX_CNT);
+        sayGoodbye(userId, trialNum);
     }
 
     private static String scanUserId() {
@@ -57,7 +58,7 @@ public class Engine {
         System.out.println("Your answer: " + userAnswer);
     }
     private static boolean isAnswerCorrect(String userAnswer, String correctAnswer) {
-        return userAnswer.equals(correctAnswer) ? true : false;
+        return userAnswer.equals(correctAnswer);
     }
 
     private static void printTrialOk() {
@@ -69,8 +70,8 @@ public class Engine {
                 + "'");
 
     }
-    private static void sayGoodbye(String userName, int correctAttempts, int winCondition) {
-        if (winCondition == correctAttempts) {
+    private static void sayGoodbye(String userName, int correctAttempts) {
+        if (correctAttempts == TRIAL_MAX_CNT) {
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("Let's try again, " + userName + "!");
