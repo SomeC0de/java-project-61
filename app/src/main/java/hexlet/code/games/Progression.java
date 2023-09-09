@@ -28,6 +28,7 @@ public final class Progression implements GameInterface {
 
         gameData[GAME_DATA_ANSW_IDX] = Integer.toString(arithmeticProgression[missedIdx]);
 
+        gameData[GAME_DATA_QUEST_IDX] = "";
         for (int idx = 0; idx < arithmeticProgression.length; idx++) {
             if (idx != missedIdx) {
                 gameData[GAME_DATA_QUEST_IDX] += arithmeticProgression[idx] + " ";
