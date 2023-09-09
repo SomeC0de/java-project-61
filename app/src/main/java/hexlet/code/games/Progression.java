@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 import hexlet.code.RandomGenerator;
 
-import java.util.Arrays;
-
 public final class Progression implements GameInterface {
     public static final String ID_PROGRESSION = "5";
     private static final int STEP_LOW_LIMIT = 1;
