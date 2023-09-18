@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.GameInterface;
+import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
-public final class Prime implements GameInterface {
+public final class Prime implements Game {
     public static final String ID_PRIME = "6";
     private static final int LOW_LIMIT = 1;
     private static final int HIGH_LIMIT = 100;

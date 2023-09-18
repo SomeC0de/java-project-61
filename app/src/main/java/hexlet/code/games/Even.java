@@ -1,8 +1,8 @@
 package hexlet.code.games;
-import hexlet.code.GameInterface;
+import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
-public final class Even implements GameInterface {
+public final class Even implements Game {
     public static final String ID_EVEN = "2";
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;

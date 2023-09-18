@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.GameInterface;
+import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
-public final class Gcd implements GameInterface {
+public final class Gcd implements Game {
     public static final String ID_GCD = "4";
     private static final int LOW_LIMIT = 0;
     private static final int HIGH_LIMIT = 100;

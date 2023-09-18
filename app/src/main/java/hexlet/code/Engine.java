@@ -6,7 +6,7 @@ public class Engine {
     private static final int TRIAL_MAX_CNT = 3;
     private static String userId;
     private static Scanner scanEngine;
-    public static void runEngine(GameInterface game) {
+    public static void runEngine(Game game) {
         int trialNum;
         scanEngine = new Scanner(System.in);
 
@@ -15,13 +15,13 @@ public class Engine {
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
             String[] actualGameData = game.getGameData();
-            askQuestion(actualGameData[GameInterface.GAME_DATA_QUEST_IDX]);
+            askQuestion(actualGameData[Game.GAME_DATA_QUEST_IDX]);
 
             String userAnswer = getAnswer();
             printUserAnswer(userAnswer);
 
-            if (!isAnswerCorrect(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX])) {
-                printTrialFault(userAnswer, actualGameData[GameInterface.GAME_DATA_ANSW_IDX]);
+            if (!isAnswerCorrect(userAnswer, actualGameData[Game.GAME_DATA_ANSW_IDX])) {
+                printTrialFault(userAnswer, actualGameData[Game.GAME_DATA_ANSW_IDX]);
                 break;
             } else {
                 printTrialOk();
@@ -43,7 +43,7 @@ public class Engine {
         System.out.println("Hello, " + userId + "!");
     }
 
-    private static void printRules(GameInterface game) {
+    private static void printRules(Game game) {
         System.out.println(game.getRules());
     }
     private static void askQuestion(String questionData) {
