@@ -31,8 +31,7 @@ public final class Calc implements Game {
                 gameData[GAME_DATA_QUEST_IDX] = firstValue + " - " + secondValue;
                 break;
             default:
-                new RuntimeException("unknown action: " + actionId);
-                break;
+                throw new RuntimeException("unknown action: " + actionId);
         }
 
         gameData[GAME_DATA_ANSW_IDX] = calculateResult(firstValue, secondValue, actionId);
@@ -40,7 +39,7 @@ public final class Calc implements Game {
         return gameData;
     }
     private static String calculateResult(int first, int second, int action) {
-        int calcValue = 0;
+        int calcValue;
 
         switch (action) {
             case MULTIPLY:
@@ -53,8 +52,7 @@ public final class Calc implements Game {
                 calcValue = first - second;
                 break;
             default:
-                new RuntimeException("unknown action: " + action);
-                break;
+                throw new RuntimeException("unknown action: " + action);
         }
 
         return Integer.toString(calcValue);
