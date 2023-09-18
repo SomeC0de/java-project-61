@@ -42,27 +42,27 @@ public class App {
 
             case Even.ID_EVEN:
                 Even gameEven = new Even();
-                Engine.runEngine(gameEven);
+                Engine.run(gameEven);
                 break;
 
             case Calc.ID_CALC:
                 Calc gameCalc = new Calc();
-                Engine.runEngine(gameCalc);
+                Engine.run(gameCalc);
                 break;
 
             case Gcd.ID_GCD:
                 Gcd gameGcd = new Gcd();
-                Engine.runEngine(gameGcd);
+                Engine.run(gameGcd);
                 break;
 
             case Progression.ID_PROGRESSION:
                 Progression gameProgression = new Progression();
-                Engine.runEngine(gameProgression);
+                Engine.run(gameProgression);
                 break;
 
             case Prime.ID_PRIME:
                 Prime gamePrime = new Prime();
-                Engine.runEngine(gamePrime);
+                Engine.run(gamePrime);
                 break;
 
             default:
