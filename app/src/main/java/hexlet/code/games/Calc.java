@@ -22,19 +22,19 @@ public final class Calc implements Game {
 
         switch (actionId) {
             case MULTIPLY:
-                gameData[GAME_DATA_QUEST_IDX] = firstValue + " * " + secondValue;
+                gameData[QUESTION] = firstValue + " * " + secondValue;
                 break;
             case ADD:
-                gameData[GAME_DATA_QUEST_IDX] = firstValue + " + " + secondValue;
+                gameData[QUESTION] = firstValue + " + " + secondValue;
                 break;
             case SUBTRACT:
-                gameData[GAME_DATA_QUEST_IDX] = firstValue + " - " + secondValue;
+                gameData[QUESTION] = firstValue + " - " + secondValue;
                 break;
             default:
                 throw new RuntimeException("unknown action: " + actionId);
         }
 
-        gameData[GAME_DATA_ANSW_IDX] = calculateResult(firstValue, secondValue, actionId);
+        gameData[ANSWER] = calculateResult(firstValue, secondValue, actionId);
 
         return gameData;
     }

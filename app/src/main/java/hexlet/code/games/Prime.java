@@ -14,8 +14,8 @@ public final class Prime implements Game {
         String[] gameData = new String[GAME_DATA_LEN];
         int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
-        gameData[GAME_DATA_QUEST_IDX] = Integer.toString(questionValue);
-        gameData[GAME_DATA_ANSW_IDX] = isPrime(questionValue);
+        gameData[QUESTION] = Integer.toString(questionValue);
+        gameData[ANSWER] = isPrime(questionValue);
 
         return gameData;
     }

@@ -13,8 +13,8 @@ public final class Even implements Game {
         String[] gameData = new String[GAME_DATA_LEN];
         int questionVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
-        gameData[GAME_DATA_QUEST_IDX] = Integer.toString(questionVal);
-        gameData[GAME_DATA_ANSW_IDX] = isEven(questionVal);
+        gameData[QUESTION] = Integer.toString(questionVal);
+        gameData[ANSWER] = isEven(questionVal);
 
         return gameData;
     }

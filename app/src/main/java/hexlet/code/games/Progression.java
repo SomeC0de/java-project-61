@@ -24,14 +24,14 @@ public final class Progression implements Game {
         int[] arithmeticProgression = generateProgression(seqStep, seqLength, seqStartValue);
         int missedIdx = RandomGenerator.generateRandomInt(0, seqLength - 1);
 
-        gameData[GAME_DATA_ANSW_IDX] = Integer.toString(arithmeticProgression[missedIdx]);
+        gameData[ANSWER] = Integer.toString(arithmeticProgression[missedIdx]);
 
-        gameData[GAME_DATA_QUEST_IDX] = "";
+        gameData[QUESTION] = "";
         for (int idx = 0; idx < arithmeticProgression.length; idx++) {
             if (idx != missedIdx) {
-                gameData[GAME_DATA_QUEST_IDX] += arithmeticProgression[idx] + " ";
+                gameData[QUESTION] += arithmeticProgression[idx] + " ";
             } else {
-                gameData[GAME_DATA_QUEST_IDX] += ".. ";
+                gameData[QUESTION] += ".. ";
             }
         }
 

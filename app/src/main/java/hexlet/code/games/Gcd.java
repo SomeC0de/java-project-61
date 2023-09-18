@@ -16,8 +16,8 @@ public final class Gcd implements Game {
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int gcdValue = calculateGcd(firstValue, secondValue);
 
-        gameData[GAME_DATA_QUEST_IDX] = firstValue + " " + secondValue;
-        gameData[GAME_DATA_ANSW_IDX] = Integer.toString(gcdValue);
+        gameData[QUESTION] = firstValue + " " + secondValue;
+        gameData[ANSWER] = Integer.toString(gcdValue);
 
         return gameData;
     }

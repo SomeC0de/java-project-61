@@ -19,13 +19,13 @@ public class Engine {
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
             String[] actualGameData = game.getGameData();
 
-            System.out.println("Question: " + actualGameData[Game.GAME_DATA_QUEST_IDX]);
+            System.out.println("Question: " + actualGameData[Game.QUESTION]);
             String userAnswer = scanEngine.nextLine();
             System.out.println("Your answer: " + userAnswer);
 
-            if (!userAnswer.equals(actualGameData[Game.GAME_DATA_ANSW_IDX])) {
+            if (!userAnswer.equals(actualGameData[Game.ANSWER])) {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + actualGameData[Game.GAME_DATA_ANSW_IDX] + "'");
+                        + "'" + actualGameData[Game.ANSWER] + "'");
                 break;
             } else {
                 System.out.println("Correct!");
