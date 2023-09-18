@@ -5,5 +5,5 @@ public interface Game {
     int ANSWER = 1;
     int GAME_DATA_LEN = 2;
     String getRules();
-    String[] getGameData();
+    String[] getData();
 }

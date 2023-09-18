@@ -13,7 +13,7 @@ public final class Calc implements Game {
     public String getRules() {
         return "What is the result of the expression?";
     }
-    public String[] getGameData() {
+    public String[] getData() {
         String[] gameData = new String[GAME_DATA_LEN];
 
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);

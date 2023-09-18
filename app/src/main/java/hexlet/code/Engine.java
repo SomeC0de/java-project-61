@@ -17,7 +17,7 @@ public class Engine {
         System.out.println(game.getRules());
 
         for (trialNum = 0; trialNum < TRIAL_MAX_CNT; trialNum++) {
-            String[] actualGameData = game.getGameData();
+            String[] actualGameData = game.getData();
 
             System.out.println("Question: " + actualGameData[Game.QUESTION]);
             String userAnswer = scanEngine.nextLine();

@@ -10,7 +10,7 @@ public final class Prime implements Game {
     public String getRules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
-    public String[] getGameData() {
+    public String[] getData() {
         String[] gameData = new String[GAME_DATA_LEN];
         int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 

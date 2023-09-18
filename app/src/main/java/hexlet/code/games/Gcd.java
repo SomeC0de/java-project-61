@@ -10,7 +10,7 @@ public final class Gcd implements Game {
     public String getRules() {
         return "Find the greatest common divisor of given numbers.";
     }
-    public String[] getGameData() {
+    public String[] getData() {
         String[] gameData = new String[GAME_DATA_LEN];
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
