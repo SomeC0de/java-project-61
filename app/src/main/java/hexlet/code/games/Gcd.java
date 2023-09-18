@@ -11,7 +11,7 @@ public final class Gcd implements Game {
         return "Find the greatest common divisor of given numbers.";
     }
     public String[] getData() {
-        String[] gameData = new String[GAME_DATA_LEN];
+        String[] gameData = new String[ELEMENTS_AMOUNT];
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
         int gcdValue = calculateGcd(firstValue, secondValue);

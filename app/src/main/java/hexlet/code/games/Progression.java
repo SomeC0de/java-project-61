@@ -15,7 +15,7 @@ public final class Progression implements Game {
         return "What number is missing in the progression?";
     }
     public String[] getData()  {
-        String[] gameData = new String[GAME_DATA_LEN];
+        String[] gameData = new String[ELEMENTS_AMOUNT];
 
         int seqStartValue = RandomGenerator.generateRandomInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);
         int seqLength = RandomGenerator.generateRandomInt(LENGTH_LOW_LIMIT, LENGTH_HIGH_LIMIT);

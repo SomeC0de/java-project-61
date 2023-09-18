@@ -14,7 +14,7 @@ public final class Calc implements Game {
         return "What is the result of the expression?";
     }
     public String[] getData() {
-        String[] gameData = new String[GAME_DATA_LEN];
+        String[] gameData = new String[ELEMENTS_AMOUNT];
 
         int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
         int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);

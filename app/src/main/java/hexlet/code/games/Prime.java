@@ -11,7 +11,7 @@ public final class Prime implements Game {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
     public String[] getData() {
-        String[] gameData = new String[GAME_DATA_LEN];
+        String[] gameData = new String[ELEMENTS_AMOUNT];
         int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
         gameData[QUESTION] = Integer.toString(questionValue);
