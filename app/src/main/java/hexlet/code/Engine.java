@@ -7,7 +7,7 @@ public class Engine {
     public static void run(Game game) {
         String userId;
         int trialNum;
-        Scanner scanEngine= new Scanner(System.in);
+        Scanner scanEngine = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
