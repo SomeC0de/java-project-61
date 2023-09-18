@@ -20,6 +20,6 @@ public final class Even implements Game {
     }
 
     private static String isEven(int val) {
-        return (0 == (val % 2)) ? "yes" : "no";
+        return ((val % 2) == 0) ? "yes" : "no";
     }
 }
