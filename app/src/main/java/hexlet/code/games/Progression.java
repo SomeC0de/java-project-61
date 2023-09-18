@@ -4,7 +4,6 @@ import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
 public final class Progression implements Game {
-    public static final String ID_PROGRESSION = "5";
     private static final int STEP_LOW_LIMIT = 1;
     private static final int STEP_HIGH_LIMIT = 10;
     private static final int LENGTH_LOW_LIMIT = 5;

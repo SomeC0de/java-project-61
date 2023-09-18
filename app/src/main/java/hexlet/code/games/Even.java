@@ -3,7 +3,6 @@ import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
 public final class Even implements Game {
-    public static final String ID_EVEN = "2";
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     public String getRules() {

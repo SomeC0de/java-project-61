@@ -4,7 +4,6 @@ import hexlet.code.Game;
 import hexlet.code.RandomGenerator;
 
 public final class Calc implements Game {
-    public static final String ID_CALC = "3";
     private static final int LOW_LIMIT = -10;
     private static final int HIGH_LIMIT = 10;
     private static final int MULTIPLY = 0;
