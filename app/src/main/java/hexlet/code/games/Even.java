@@ -13,12 +13,12 @@ public final class Even implements Game {
         int questionVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
         gameData[QUESTION] = Integer.toString(questionVal);
-        gameData[ANSWER] = isEven(questionVal);
+        gameData[ANSWER] = isEven(questionVal) ? "yes" : "no";
 
         return gameData;
     }
 
-    private static String isEven(int val) {
-        return ((val % 2) == 0) ? "yes" : "no";
+    private static boolean isEven(int val) {
+        return ((val % 2) == 0);
     }
 }

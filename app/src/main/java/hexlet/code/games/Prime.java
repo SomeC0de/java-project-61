@@ -14,20 +14,20 @@ public final class Prime implements Game {
         int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
 
         gameData[QUESTION] = Integer.toString(questionValue);
-        gameData[ANSWER] = isPrime(questionValue);
+        gameData[ANSWER] = isPrime(questionValue) ? "yes" : "no";
 
         return gameData;
     }
-    private static String isPrime(int value) {
+    private static boolean isPrime(int value) {
         if (value <= 1) {
-            return "no";
+            return false;
         }
 
         for (int idx = 2; idx < value / 2; idx++) {
             if ((value % idx) == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }
