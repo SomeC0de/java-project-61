@@ -25,14 +25,16 @@ public final class Progression implements Game {
 
         gameData[ANSWER] = Integer.toString(arithmeticProgression[missedIdx]);
 
-        gameData[QUESTION] = "";
+        StringBuilder question = new StringBuilder("");
         for (int idx = 0; idx < arithmeticProgression.length; idx++) {
             if (idx != missedIdx) {
-                gameData[QUESTION] += arithmeticProgression[idx] + " ";
+                question.append(arithmeticProgression[idx]);
+                question.append(" ");
             } else {
                 gameData[QUESTION] += ".. ";
             }
         }
+        gameData[QUESTION] = String.valueOf(question);
 
         return gameData;
     }
