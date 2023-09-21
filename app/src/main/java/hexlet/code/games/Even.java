@@ -10,7 +10,7 @@ public final class Even implements Game {
     }
     public String[] getData() {
         String[] gameData = new String[ELEMENTS_AMOUNT];
-        int questionVal = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int questionVal = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
 
         gameData[QUESTION] = Integer.toString(questionVal);
         gameData[ANSWER] = isEven(questionVal) ? "yes" : "no";

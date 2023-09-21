@@ -11,10 +11,10 @@ public final class Prime implements Game {
     }
     public String[] getData() {
         String[] gameData = new String[ELEMENTS_AMOUNT];
-        int questionValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int question = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
 
-        gameData[QUESTION] = Integer.toString(questionValue);
-        gameData[ANSWER] = isPrime(questionValue) ? "yes" : "no";
+        gameData[QUESTION] = Integer.toString(question);
+        gameData[ANSWER] = isPrime(question) ? "yes" : "no";
 
         return gameData;
     }

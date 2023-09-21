@@ -15,29 +15,29 @@ public final class Calc implements Game {
     public String[] getData() {
         String[] gameData = new String[ELEMENTS_AMOUNT];
 
-        int actionId = RandomGenerator.generateRandomInt(MULTIPLY, SUBTRACT);
-        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
+        int actionId = RandomGenerator.getInt(MULTIPLY, SUBTRACT);
+        int first = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
+        int second = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
 
         switch (actionId) {
             case MULTIPLY:
-                gameData[QUESTION] = firstValue + " * " + secondValue;
+                gameData[QUESTION] = first + " * " + second;
                 break;
             case ADD:
-                gameData[QUESTION] = firstValue + " + " + secondValue;
+                gameData[QUESTION] = first + " + " + second;
                 break;
             case SUBTRACT:
-                gameData[QUESTION] = firstValue + " - " + secondValue;
+                gameData[QUESTION] = first + " - " + second;
                 break;
             default:
                 throw new RuntimeException("unknown action: " + actionId);
         }
 
-        gameData[ANSWER] = calculateResult(firstValue, secondValue, actionId);
+        gameData[ANSWER] = calculate(first, second, actionId);
 
         return gameData;
     }
-    private static String calculateResult(int first, int second, int action) {
+    private static String calculate(int first, int second, int action) {
         int calcValue;
 
         switch (action) {

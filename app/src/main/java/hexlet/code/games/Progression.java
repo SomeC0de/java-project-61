@@ -16,19 +16,19 @@ public final class Progression implements Game {
     public String[] getData()  {
         String[] gameData = new String[ELEMENTS_AMOUNT];
 
-        int seqStartValue = RandomGenerator.generateRandomInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);
-        int seqLength = RandomGenerator.generateRandomInt(LENGTH_LOW_LIMIT, LENGTH_HIGH_LIMIT);
-        int seqStep = RandomGenerator.generateRandomInt(STEP_LOW_LIMIT, STEP_HIGH_LIMIT);
+        int startVal = RandomGenerator.getInt(START_VALUE_LOW_LIMIT, START_VALUE_HIGH_LIMIT);
+        int length = RandomGenerator.getInt(LENGTH_LOW_LIMIT, LENGTH_HIGH_LIMIT);
+        int step = RandomGenerator.getInt(STEP_LOW_LIMIT, STEP_HIGH_LIMIT);
 
-        int[] arithmeticProgression = generateProgression(seqStep, seqLength, seqStartValue);
-        int missedIdx = RandomGenerator.generateRandomInt(0, seqLength - 1);
+        int[] progression = generateProgression(step, length, startVal);
+        int missedIdx = RandomGenerator.getInt(0, length - 1);
 
-        gameData[ANSWER] = Integer.toString(arithmeticProgression[missedIdx]);
+        gameData[ANSWER] = Integer.toString(progression[missedIdx]);
 
         StringBuilder question = new StringBuilder("");
-        for (int idx = 0; idx < arithmeticProgression.length; idx++) {
+        for (int idx = 0; idx < progression.length; idx++) {
             if (idx != missedIdx) {
-                question.append(arithmeticProgression[idx]);
+                question.append(progression[idx]);
             } else {
                 question.append("..");
             }
@@ -39,12 +39,12 @@ public final class Progression implements Game {
         return gameData;
     }
 
-    private static int[] generateProgression(int step, int length, int initVal) {
+    private static int[] generateProgression(int step, int length, int init) {
         int[] progression = new int[length];
         int nextVal = 0;
 
         for (int idx = 0; idx < progression.length; idx++, nextVal += step) {
-            progression[idx] = initVal + nextVal;
+            progression[idx] = init + nextVal;
         }
         return progression;
     }

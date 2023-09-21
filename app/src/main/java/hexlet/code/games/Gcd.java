@@ -11,12 +11,12 @@ public final class Gcd implements Game {
     }
     public String[] getData() {
         String[] gameData = new String[ELEMENTS_AMOUNT];
-        int firstValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int secondValue = RandomGenerator.generateRandomInt(LOW_LIMIT, HIGH_LIMIT);
-        int gcdValue = calculateGcd(firstValue, secondValue);
+        int first = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
+        int second = RandomGenerator.getInt(LOW_LIMIT, HIGH_LIMIT);
+        int gcd = calculateGcd(first, second);
 
-        gameData[QUESTION] = firstValue + " " + secondValue;
-        gameData[ANSWER] = Integer.toString(gcdValue);
+        gameData[QUESTION] = first + " " + second;
+        gameData[ANSWER] = Integer.toString(gcd);
 
         return gameData;
     }
